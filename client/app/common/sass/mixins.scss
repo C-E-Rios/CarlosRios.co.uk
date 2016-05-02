@@ -1,10 +1,3 @@
-$breakpoints: (
-    'small': (min-width: 767px),
-    'small-portrait': (min-width: 767px, orientation: portrait),
-    'medium': (min-width: 992px),
-    'large': (min-width: 1200px),
-);
-
 /// Media query merger
 /// Create a single media condition out of a map of queries
 /// @param {Map} $queries - Map of media queries
@@ -30,7 +23,7 @@ $breakpoints: (
 /// @requires $breakpoints
 @mixin respond-to($breakpoint) {
     // Get the query map for $breakpoints map
-    $queries: map-get($breakpoints, $breakpoint);
+    $queries: map-get($media-breakpoints, $breakpoint);
 
     // If there is no query called $breakpoint in map, throw an error
     @if not $queries {
@@ -42,4 +35,54 @@ $breakpoints: (
     @include media($queries) {
         @content;
     }
+}
+
+/// https://claudiordgz.com/responsive-typography-using-modular-scale/
+@mixin font-respond-to($media) {
+    @if not map-contains($media-types, $media) {
+        @warn "#{$media} is not a known media type. Using large-desktop instead.";
+        $media: large-desktop;
+    }
+    @media #{map-get($media-types, $media)} {
+        @content;
+    }
+}
+
+/* Now it is time to join the responsive functionality with modular scale.
+ * @param {number} $default the default modular scale
+ * @param {number} $phone For sizes below 480px
+ * @param {number} $tablet-portrait Sizes bigger than phone but smaller than 768px
+ * @param {number} $tablet-landscape Bigger than portrait smaller than 1200px
+ * @param {number} $desktop Bigger than landscape tablet, smaller than 1080p width
+ * @param {number} $large-desktop Anything bigger than 1080p for now */
+@mixin fontMultiScreen($default, $phone, $tablet-portrait, $tablet-landscape, $desktop, $large-desktop) {
+    font-size: ms($default);
+    @include font-respond-to(phone) {
+        font-size: ms($phone);
+    }
+    @include font-respond-to(tablet-portrait) {
+        font-size: ms($tablet-portrait);
+    }
+    @include font-respond-to(tablet-landscape-desktop) {
+        font-size: ms($tablet-landscape);
+    }
+    @include font-respond-to(desktop) {
+        font-size: ms($desktop);
+    }
+    @include font-respond-to(large-desktop) {
+        font-size: ms($large-desktop);
+    }
+}
+
+/* A wrapper for lists.
+ * @param {number[]} $propertiesList the ordered array according to the parameters shown above */
+@mixin mapTypeList($propertiesList) {
+    @include fontMultiScreen( 
+        nth($propertiesList, 1),
+        nth($propertiesList, 2),
+        nth($propertiesList, 3),
+        nth($propertiesList, 4),
+        nth($propertiesList, 5),
+        nth($propertiesList, 6)
+    );
 }

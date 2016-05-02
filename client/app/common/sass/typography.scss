@@ -1,0 +1,24 @@
+$ms-base: 1em;
+$ms-ratio: $golden;
+
+///($default, $phone, $tablet-portrait, $tablet-landscape, $desktop, $large-desktop)
+
+h1 {
+    @include mapTypeList((3, 1, 2, 2, 3, 3));
+}
+
+h2 {
+    @include mapTypeList((3, 1, 1, 2, 3, 3));
+}
+
+h3 {
+    @include mapTypeList((3, 1, 1, 2, 2, 2));
+}
+
+h4 {
+    @include mapTypeList((2, 0, 0, 1, 2, 2));
+}
+
+p {
+    @include mapTypeList((0, 0, 1, 1, 1, 1));
+}

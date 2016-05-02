@@ -1,0 +1,17 @@
+$media-breakpoints: (
+    'phone': (max-width: 480px),
+    'small': (min-width: 767px),
+    'small-portrait': (min-width: 767px, orientation: portrait),
+    'medium': (min-width: 992px),
+    'large': (min-width: 1200px),
+);
+
+$media-types: (
+    phone: '(max-width: 480px)',
+    tablet-portrait: '(min-width: 481px) and (max-width: 767px)',
+    tablet-landscape-desktop: '(min-width: 768px) and (max-width: 1199px)',
+    desktop: '(min-width: 1200px) and (max-width: 1919px)',
+    large-desktop: '(min-width: 1920px)',
+    non-retina: 'screen and (-webkit-max-device-pixel-ratio: 1)',
+    retina: 'screen and (-webkit-min-device-pixel-ratio: 2)'
+);

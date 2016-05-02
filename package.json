@@ -1,12 +1,14 @@
 {
-  "name": "ng6-starter",
+  "name": "carlosrios.co.uk",
   "version": "0.0.1",
-  "description": "Starter for Angular + ES6 + (Webpack or JSPM)",
+  "description": "Carlos Gomez Rios' portfolio",
   "main": "index.js",
   "dependencies": {
     "angular": "^1.5.0",
     "angular-ui-router": "^0.2.15",
-    "lodash": "^3.8.0"
+    "lodash": "^3.8.0",
+    "purecss": "^0.6.0",    
+    "typi": "^2.1.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0",
@@ -34,7 +36,6 @@
     "ng-annotate-loader": "0.0.10",
     "node-libs-browser": "^0.5.0",
     "node-sass": "^3.6.0",
-    "purecss": "^0.6.0",
     "raw-loader": "^0.5.1",
     "run-sequence": "^1.1.0",
     "sass-loader": "^3.1.2",
@@ -50,14 +51,14 @@
     "test": "karma start"
   },
   "keywords": [
-    "angular",
-    "webpack",
-    "es6"
+    "frontend",
+    "front",
+    "developer",
+    "carlosrios"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/angularclass/NG6-starter.git"
+    "url": "https://github.com/c-e-rios/carlosrios.git"
   },
-  "author": "AngularClass",
-  "license": "Apache-2.0"
+  "author": "Carlos Gomez Rios"
 }
