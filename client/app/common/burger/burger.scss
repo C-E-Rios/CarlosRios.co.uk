@@ -1,0 +1,60 @@
+@import '../sass/common';
+
+burger {
+    left: 2em;  
+    position: relative;
+}
+
+.burger {
+    cursor: pointer;
+    height: 26px;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    width: 30px;
+}
+
+.burger span {
+    background: #d3531a;
+    border-radius: 9px;
+    display: block;
+    height: 4px;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    width: 100%;
+}
+
+.burger span:nth-child(1) {
+    top: 0px;
+}
+
+.burger span:nth-child(2), 
+.burger span:nth-child(3) {
+    top: 10px;
+}
+
+.burger span:nth-child(4) {
+    top: 20px;
+}
+
+.burger.open span:nth-child(1) {
+    left: 50%;
+    top: 10px;
+    width: 0%;
+}
+
+.burger.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.burger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.burger.open span:nth-child(4) {
+    left: 50%;
+    top: 10px;
+    width: 0%;
+}

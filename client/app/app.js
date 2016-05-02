@@ -9,10 +9,11 @@ angular.module('app', [
     uiRouter,
     Common.name,
     Components.name
-  ])
-  .config(($locationProvider) => {
+])
+
+.config(($locationProvider) => {
     "ngInject";
     $locationProvider.html5Mode(true).hashPrefix('!');
-  })
+})
 
-  .component('app', AppComponent);
+.component('app', AppComponent);

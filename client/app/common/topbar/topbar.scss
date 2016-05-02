@@ -1,0 +1,36 @@
+@import '../sass/common';
+
+header + * {
+    margin-top: $headerHeight;
+}
+
+.topbar {
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);            
+    height: $headerHeight;  
+
+    display: flex;
+    align-items: center;    
+    
+}
+
+.topbar {
+    background: #333;
+}
+
+.logo {
+           
+    height: 60px;
+    @include respond-to('medium') {
+        height: 80px;
+    } 
+    
+    margin: 0 auto;
+    
+    img {
+        min-width: 60px;
+        @include respond-to('medium') {
+            min-width: 80px;
+        }         
+    }  
+}
+

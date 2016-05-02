@@ -1,0 +1,11 @@
+@import '../sass/common';
+
+menu {
+    background-color: #ccc;
+    height: 100%;    
+    margin: 0;    
+    left: 0;   
+    position: absolute;     
+    top: $headerHeight;
+    width: 100%;
+}
