@@ -3,10 +3,11 @@ import controller from './menu.controller';
 import './menu.scss';
 
 let menuComponent = {
-  bindings: {},
-  template,
-  controller,
-  controllerAs: 'menu'
+    require: {
+        app: '^app'
+    },
+    template,
+    controller
 };
 
 export default menuComponent;

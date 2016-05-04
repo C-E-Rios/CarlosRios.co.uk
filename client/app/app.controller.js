@@ -1,19 +1,16 @@
-class RootController {
+class AppController {
+    
     constructor() {
-        
-        let self = this;
         
         this.name = 'home';
         this.menu = false;
-        
-        this.showMenu = showMenu;
-        
-        function showMenu () {
-            console.log(self.menu);
-            self.menu = !self.menu;            
-        }
-        
+        this.bigLogo = false;
     }
+    
+    showLogo () {
+        this.bigLogo = !this.bigLogo;
+    }
+    
 }
 
-export default RootController;
+export default AppController;

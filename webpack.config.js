@@ -5,6 +5,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   devtool: 'sourcemap',
   entry: {},
+  externals: {
+    'TweenLite': 'TweenLite'
+  },
   module: {
     loaders: [
        { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },

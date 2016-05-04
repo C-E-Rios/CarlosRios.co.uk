@@ -1,3 +1,11 @@
+///
+@mixin full-height() {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column 
+}
+
 /// Media query merger
 /// Create a single media condition out of a map of queries
 /// @param {Map} $queries - Map of media queries

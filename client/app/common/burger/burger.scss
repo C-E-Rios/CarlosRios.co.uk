@@ -1,8 +1,9 @@
 @import '../sass/common';
 
 burger {
-    left: 2em;  
-    position: relative;
+    left: 2em;
+    top: $headerHeight / 2.6 + px;
+    position: absolute;
 }
 
 .burger {
@@ -14,12 +15,11 @@ burger {
 }
 
 .burger span {
-    background: #d3531a;
+    background: #ffffff;
     border-radius: 9px;
     display: block;
     height: 4px;
     left: 0;
-    opacity: 1;
     position: absolute;
     transform: rotate(0deg);
     transition: .25s ease-in-out;

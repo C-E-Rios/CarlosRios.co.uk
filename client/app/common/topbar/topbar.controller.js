@@ -1,12 +1,31 @@
 class TopbarController {
 
-    constructor() {
+    constructor($scope, $state) {
+        'ngInject';
+        
         this.name = 'topbar';
+        this.$scope = $scope;
+        this.$state = $state;        
+                
     }
 
-    $onInit() {
-        this.showMenu = this.app.showMenu;
-    }    
+    $onInit() { 
+        // let _this = this;
+        // this.$scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        // console.log(event);
+        //     if (!fromState.abstract) {
+        //         _this.app.menu = !_this.app.menu;            
+        //     }               
+        // });
+    }   
+    
+    toggleMenu () {
+        this.app.menu = !this.app.menu;        
+    }
+    
+    showMenu () {       
+        return this.$state.current.name !== 'home';
+    }
     
 }
 

@@ -5,12 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "angular": "^1.5.0",
+    "angular-animate": "^1.5.5",
     "angular-ui-router": "^0.2.15",
-    "lodash": "^3.8.0",
-    "purecss": "^0.6.0",    
-    "typi": "^2.1.1"
+    "purecss": "^0.6.0"
   },
   "devDependencies": {
+    "angular-aria": "^1.5.5",
     "angular-mocks": "^1.5.0",
     "babel-core": "^5.4.2",
     "babel-loader": "^5.0.0",
@@ -31,6 +31,7 @@
     "karma-mocha-reporter": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.4",
     "karma-webpack": "^1.5.1",
+    "lodash": "^3.8.0",    
     "mocha": "^2.3.0",
     "modularscale-sass": "^2.1.1",
     "ng-annotate-loader": "0.0.10",

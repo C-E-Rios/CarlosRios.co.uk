@@ -1,3 +1,41 @@
-.about {
-  color: red;
+@import '../../common/sass/common';
+
+about {
+    position: relative;
+    top: 5em;
+    
+    .large-heading {
+        font-family: 'Roboto Slab', serif;        
+        @include mapTypeList((2, 2, 2, 2, 3, 3));
+    }
+    
+    .small-heading {
+        $ms-base: 18px;
+        @include mapTypeList((1, 1, 1, 1, 1, 1));
+        @include respond-to('medium') {
+            font-size: 2rem;
+        }        
+        font-family: 'Work Sans', sans-serif;
+        line-height: 1.2;
+    }
+    
+    .skills--heading {
+        border-bottom: 1px solid #ffffff;
+        margin: 0 3em 0.6em 0;
+        padding-bottom: 0.4em        
+    }
+    
+    ul.skills--development, ul.skills--design {
+        margin: 0;
+        padding: 0;
+        padding-left: 1.2em;
+    }
+    
+    ul.skills--development li {
+        float: left;
+        width: 50%;
+    }
+    
 }
+
+

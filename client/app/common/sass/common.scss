@@ -1,5 +1,5 @@
-// @import url(//fonts.googleapis.com/css?family=Roboto);
 @import './node_modules/purecss/build/pure-min';
+@import './node_modules/purecss/build/grids-responsive-min';
 @import './node_modules/modularscale-sass/stylesheets/modular-scale';
 @import 'variables';
 @import 'mixins';
@@ -9,4 +9,13 @@
 
 body {
     height: 100%;
+    background-color: #202126;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 800px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
 }

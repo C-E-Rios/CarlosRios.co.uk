@@ -1,24 +1,42 @@
-$ms-base: 1em;
+@import url(//fonts.googleapis.com/css?family=Work+Sans:100|Roboto+Slab:700);
+
+$ms-base: 1rem;
 $ms-ratio: $golden;
 
 ///($default, $phone, $tablet-portrait, $tablet-landscape, $desktop, $large-desktop)
 
-h1 {
-    @include mapTypeList((3, 1, 2, 2, 3, 3));
+h1 { @include mapTypeList((2, 1, 1, 1, 2, 3)); }
+
+h2 { @include mapTypeList((2, 1, 1, 1, 2, 2)); }
+
+h3 { @include mapTypeList((2, 0, 1, 1, 1, 2)); }
+
+h4 { @include mapTypeList((1, 0, 1, 1, 1, 1)); }
+
+p { @include mapTypeList((0, 0, 0, 0, 0, 0)); }
+
+body {
+    color: #ffffff;
 }
 
-h2 {
-    @include mapTypeList((3, 1, 1, 2, 3, 3));
+a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
-h3 {
-    @include mapTypeList((3, 1, 1, 2, 2, 2));
+h1, h2, li {
+    font-family: 'Roboto Slab', serif;
 }
 
-h4 {
-    @include mapTypeList((2, 0, 0, 1, 2, 2));
+h3, h4 {
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.2;
 }
 
 p {
-    @include mapTypeList((0, 0, 1, 1, 1, 1));
+    // font-family: 'Prata', sans-serif;
+    line-height: 1.7;
+    @include respond-to('phone') {
+        font-size: 0.9rem;
+    }
 }

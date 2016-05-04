@@ -1,6 +1,26 @@
-<nav>
-    <ul>
-        <li>Menu</li>
-        <li>here</li>
-    </ul>    
-</nav>
+<div class="menu-wrap">
+    <nav>
+        <ul>
+            <li ui-sref-active="active" ng-click="$ctrl.toggleMenu()"><a href ui-sref="home">home</a></li>
+            <li ui-sref-active="active" ng-click="$ctrl.toggleMenu()"><a href ui-sref="about">about</a></li>
+            <li ui-sref-active="active" ng-click="$ctrl.toggleMenu()"><a href ui-sref="portfolio">portfolio</a></li>
+            <li ui-sref-active="active" ng-click="$ctrl.toggleMenu()"><a href ui-sref="contact">contact</a></li>
+        </ul>    
+    </nav>
+
+    <footer>
+        <hr>
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <p class="copyright">
+                    <small>2016 - carlosrios.co.uk</small>
+                </p>            
+            </div>
+            <div class="pure-u-1-2">
+                <p class="details">
+                    <a href="mailto:hell@carlosrios.co.uk">hello@carlosrios.co.uk</a>
+                </p>                    
+            </div>
+        </div>
+    </footer>
+</div>
