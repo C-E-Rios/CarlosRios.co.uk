@@ -4,31 +4,56 @@ header + * {
     margin-top: $headerHeight + px;
 }
 
-.topbar {           
-    height: $headerHeight + px;  
-    display: flex;
-    align-items: center;    
+// .topbar {           
+//     height: $headerHeight + px;  
+//     display: flex;
+//     align-items: center;    
     
-}
+// }
+
+// .topbar {
+//     background: #626572;
+//     .logo {
+            
+//         height: 60px;
+//         @include respond-to('medium') {
+//             height: 80px;
+//         } 
+        
+//         margin: 0 auto;
+        
+//         img {
+//             min-width: 60px;
+//             @include respond-to('medium') {
+//                 min-width: 80px;
+//             }         
+//         }  
+//     }     
+// }
 
 .topbar {
-    background: #626572;
-}
+    background-color: #ffffff;
+    height: 100%;    
+    left: 0;   
+    margin: 0;    
+    position: absolute;     
+    top: 0;
+    width: 100%;
+    z-index: 12;    
 
-.logo {
-           
-    height: 60px;
-    @include respond-to('medium') {
-        height: 80px;
-    } 
+    svg#logo {
+        width: 15%;
+        max-width: 540px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);  
+    }
     
-    margin: 0 auto;
+    svg#logo {
+        #thick path {
+            opacity: 0;
+        }
+    }    
     
-    img {
-        min-width: 60px;
-        @include respond-to('medium') {
-            min-width: 80px;
-        }         
-    }  
 }
-

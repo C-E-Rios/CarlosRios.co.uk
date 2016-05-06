@@ -1,30 +1,50 @@
 @import '../sass/common';
 
-intro-animation {
-    // background-color: #626572;
-    // height: 100%;    
-    // left: 0;   
-    // margin: 0;    
-    // position: absolute;     
-    // top: 0;
-    // width: 100%;
-    // z-index: 12;
+.animation-controls {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 999999;
+    background-color: orange;
+    padding: 2em;
     
-    // .logo {
-    //     display: flex;
-    //     height: 100vh;
-    //     align-items: center;
-    //     flex-direction: row; 
-    // }
-
-    // img {
-    //     max-height: 98vh;        
-    // }    
-    .full-size {
-        width: 400px;
-        height: 400px;
-        background-color: orange;
-        position: absolute;
-        top: 0;
+    button {
+        background-color: #202126;
+        color: #fff;
+        padding: 0.5em;
     }
 }
+
+intro-animation {
+    
+    overflow: hidden;
+    
+    .full-size {
+        // background-color: #1f2026;
+        background-color: #ffffff;
+        height: 100%;    
+        left: 0;   
+        margin: 0;    
+        position: absolute;     
+        top: 0;
+        width: 100%;
+        z-index: 12;
+    }
+
+    svg#logo {
+        width: 15%;
+        max-width: 540px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);  
+    }
+    
+    svg#logo {
+        #thick path {
+            opacity: 0;
+        }
+    }    
+   
+}
+

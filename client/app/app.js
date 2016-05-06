@@ -1,14 +1,18 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
+import { LogDecorator, ExternalLogger } from '../../vendor/LogDecorator';
+
+import TweenLite from "gsap";
+import TimelineLite from "gsap";
+import CSSPlugin from "gsap/src/uncompressed/plugins/CSSPlugin"
+import DrawSVGPlugin from "gsap/src/uncompressed/plugins/DrawSVGPlugin";
+import MorphSVGPlugin from "gsap/src/uncompressed/plugins/MorphSVGPlugin";
+
 import Common from './common/common';
 import Components from './components/components';
 
 import AppComponent from './app.component';
-
-import { LogDecorator, ExternalLogger } from '../../vendor/LogDecorator';
-import TweenLite from '../../vendor/TweenLite.js'
-import TimelineLite from '../../vendor/TimelineLite.js'
 
 angular
     .element( document )
@@ -32,6 +36,7 @@ angular
                     "ngInject";
                     $locationProvider.html5Mode(true).hashPrefix('!');
                 })
+                .value('crMain', { introAnimationComplete: false})
                 .component('app', AppComponent);
 
         angular.bootstrap( body, [ app.name ], { strictDi: true })

@@ -1,6 +1,7 @@
 @import '../../common/sass/common';
 
 home {
+    
     @include full-height();
     
     header {
@@ -8,6 +9,7 @@ home {
     }
     
     main {
+        opacity: 0;
         flex-grow: 1;
     }
     
