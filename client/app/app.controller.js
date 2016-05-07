@@ -4,7 +4,7 @@ class AppController {
         'ngInject';
         
         this.AppValues = AppValues;
-        this.name = 'home';
+        this.name = 'app';
         this.menu = false;
               
     }

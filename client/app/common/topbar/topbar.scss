@@ -31,9 +31,10 @@ header + * {
 //     }     
 // }
 
+
 .topbar {
-    background-color: #ffffff;
-    height: 100%;    
+    background-color: #626572;
+    height: $headerHeight + px;    
     left: 0;   
     margin: 0;    
     position: absolute;     
@@ -42,18 +43,17 @@ header + * {
     z-index: 12;    
 
     svg#logo {
-        width: 15%;
+        // width: 15%;
+        width: 60px;
+        @include respond-to('medium') {
+            width: 80px;
+        }         
+        
         max-width: 540px;
         position: absolute;
         top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);  
-    }
-    
-    svg#logo {
-        #thick path {
-            opacity: 0;
-        }
-    }    
+    }   
     
 }

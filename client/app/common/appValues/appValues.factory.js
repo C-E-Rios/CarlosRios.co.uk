@@ -1,4 +1,4 @@
-let AppValues = function () {
+let AppValues = () => {
     const app = {
         menu: false,
         introAnimation: false,

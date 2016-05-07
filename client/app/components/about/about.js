@@ -4,17 +4,18 @@ import aboutComponent from './about.component';
 import { ExternalLogger } from '../../../../vendor/LogDecorator';
 
 let aboutModule = angular.module('about', [
-        uiRouter
-    ])
-    .config(($stateProvider) => {
-        "ngInject";
-        $stateProvider
+    uiRouter
+])
+.config(($stateProvider) => {
+    'ngInject';
+    
+    $stateProvider
         .state('about', {
             url: '/about',
             template: '<about></about>'
         });
-    })
-    .component('about', aboutComponent);
+})
+.component('about', aboutComponent);
 
 let $log = new ExternalLogger();
     $log = $log.getInstance( 'BOOTSTRAP' );

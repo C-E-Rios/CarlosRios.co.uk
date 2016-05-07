@@ -1,19 +1,19 @@
 class HomeController {
-    
     constructor ($timeout) {
         'ngInject';
         
         this.name = 'home';
         this.$timeout = $timeout;
-        this.homeReady = false;
+        this.intro = false;
+
     }
     
     $onInit () {
         this.$timeout(() => {
-            console.log('home ready');
-            this.homeReady = true;      
+            this.intro = true;      
         });         
-    }    
+    }
+    
 }
 
 export default HomeController;
