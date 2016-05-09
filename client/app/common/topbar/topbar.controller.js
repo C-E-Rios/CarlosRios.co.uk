@@ -1,19 +1,17 @@
 class TopbarController {
 
-    constructor($state, $timeout, $element, AppValues) {
+    constructor($state, $element, menuService) {
         'ngInject';
         
-        this.name = 'topbar';
         this.$state = $state;
-        this.$timeout = $timeout;
-        // this.AppValues = AppValues;
-        this.introAnimation = false;
+        
+        this.name = 'topbar';
+        this.menuService = menuService;
                 
     }
     
-    //why is this here??
     toggleMenu () {
-        this.app.menu = !this.app.menu;        
+        this.menuService.menu = !this.menuService.menu;        
     }
     
     atHome () {       

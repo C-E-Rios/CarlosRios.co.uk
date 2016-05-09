@@ -36,7 +36,6 @@ home {
 }
 
 .app-sections .app-section {
-    opacity: 0;
     cursor: pointer;
     background: #444650;
     @include respond-to('phone') {

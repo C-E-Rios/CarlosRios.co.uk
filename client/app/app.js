@@ -1,6 +1,5 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import ngAnimate from 'angular-animate';
 
 import { LogDecorator, ExternalLogger } from '../../vendor/LogDecorator';
 
@@ -28,8 +27,6 @@ angular
         let body = document.getElementsByTagName('body')[0];
         let app  = angular.module( appName, [ 
                     uiRouter,
-                    ngAnimate,
-                    
                     Common.name,
                     Components.name 
                 ])

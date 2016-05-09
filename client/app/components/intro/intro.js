@@ -2,7 +2,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
 import introComponent from './intro.component';
-import introAnimation from './intro.animation';
+import introService from './intro.service';
 
 let introModule = angular.module('intro', [
     uiRouter
@@ -19,6 +19,6 @@ let introModule = angular.module('intro', [
         });
 })
 .component('intro', introComponent)
-.animation('.intro', introAnimation);
+.service('introService', introService);
 
 export default introModule;

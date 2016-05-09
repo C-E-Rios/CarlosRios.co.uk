@@ -4,7 +4,7 @@ import './burger.scss';
 
 let burgerComponent = {
     require: {
-        app: '^app'
+        topbar: '^topbar'
     },
     bindings: {},
     template,

@@ -1,17 +1,15 @@
 class HomeController {
-    constructor ($timeout) {
+    constructor ($element, introService) {
         'ngInject';
         
+        this.$element = $element;
+        this.introService = introService;
         this.name = 'home';
-        this.$timeout = $timeout;
-        this.intro = false;
 
     }
     
     $onInit () {
-        this.$timeout(() => {
-            this.intro = true;      
-        });         
+        this.introService.enter(this.$element);     
     }
     
 }

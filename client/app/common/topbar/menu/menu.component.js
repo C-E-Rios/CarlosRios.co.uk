@@ -4,7 +4,7 @@ import './menu.scss';
 
 let menuComponent = {
     require: {
-        app: '^app'
+        topbar: '^topbar'
     },
     template,
     controller

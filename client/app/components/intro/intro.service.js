@@ -1,31 +1,48 @@
-let topbarAnimation = ($timeout, AppValues) => {
-
-    let enter = (element) => {
-        
-        let topbar  = element,
+class IntroService {
+    constructor ($state, $timeout) {
+        'ngInject'
+        this.$state = $state;
+        this.$timeout = $timeout;
+    }
+    
+    enter (element) {
+        let intro   = element,
+        introBg     = angular.element(element[0].querySelectorAll('.intro')),    
+        introXy =  intro[0].getBoundingClientRect(),
         thinLetter  = angular.element(element[0].querySelectorAll('#thin path')),
         thickLetter = angular.element(element[0].querySelectorAll('#thick path')),
         badge       = angular.element(element[0].querySelector('#badge')),                                                                                              
-        img         = element.find('svg');
+        logo         = element.find('svg');
                     
         let tl = new TimelineLite({ 
-            onComplete: (() => { animationComplete() })
+            onComplete: (() => { this.animationComplete() })
         });
         
+
+        
         tl
-        // defaults
-        .set(element[0], { 
-            z: 0.01, force3D: "true"
-        })        
-        // .set(img, { 
-        //     xPercent: '-50%', 
-        //     yPercent: '-50%'
+        
+        //defaults 
+        // .set(logo, { 
+        //     z: 0.01, 
+        //     force3D: 'true'
+            // xPercent: '-50%',
+            // yPercent: '-50%',           
         // })
-       
+        .set(introBg[0], { 
+            z: 0.01, 
+            force3D: "true"
+        })
+        .set(thickLetter, {
+            opacity: 0
+        })
+        .set(thinLetter, {
+            opacity: 1
+        }) 
+               
         // draw single stroke cgr
         .staggerFromTo(thinLetter, 0.9, { 
-            drawSVG: '0%', 
-            transformOrigin: '50% 50%'
+            drawSVG: '0%'
         }, { 
             drawSVG: '100%', 
             ease: Expo.easeInOut
@@ -40,7 +57,7 @@ let topbarAnimation = ($timeout, AppValues) => {
         })
         
         // change background to dark navy    
-        .to(topbar, .5, { 
+        .to(introBg, .5, { 
             css: { 
                 backgroundColor: '#202126'
             }, 
@@ -51,15 +68,15 @@ let topbarAnimation = ($timeout, AppValues) => {
         .to('.thin-c', 0.4, { 
             morphSVG:'.thick-c', 
             ease: Circ.easeOut
-        }, 3.1)
+        }, 2.5)
         .to('.thin-g', 0.4, { 
             morphSVG:'.thick-g', 
             ease: Circ.easeOut
-        }, 3.1)
+        }, 2.5)
         .to('.thin-r', 0.4, { 
             morphSVG:'.thick-r', 
             ease: Circ.easeOut
-        }, 3.1)
+        }, 2.5)
 
         // show thick letter fill
         .staggerFromTo(thickLetter, 0.4, {
@@ -71,7 +88,7 @@ let topbarAnimation = ($timeout, AppValues) => {
                 opacity: 1
             }, 
             ease: Power4.easeIn
-        }, '', "-=.3")
+        }, '', "-=.6")
 
         // hide single stroke
         .staggerFromTo(thinLetter, 0.3, {
@@ -97,19 +114,12 @@ let topbarAnimation = ($timeout, AppValues) => {
         // })        
         
         // make logo smaller and move to top
-        
         .to(logo, 0.3, { 
             css: {
-                // marginTop: '3.1em', 
-                // scale: 0.5
-                width: '81px',
-                clearProps:"all" 
+                marginTop: '2.6em', 
+                width: '81px', 
+                top: 0               
             },
-        })
-        .to(logo, 0.4, { 
-            css: {
-                // top: 0 
-            }
         })        
         
         // remove badge stroke
@@ -117,66 +127,57 @@ let topbarAnimation = ($timeout, AppValues) => {
             stroke: 'none' 
         }, "-=0.8")
         
-        // reveal body - topbar height 100 and change color
-        .to(topbar, 0.7, { 
-            height: '100px', 
+        // reveal body - intro height 100 and change color
+        .to(introBg, 0.7, { 
+            height: '90px', 
             ease: Power4.easeOut 
         }, '-=0.4')
-        .to(topbar, 0.3, { 
+        .to(introBg, 0.3, { 
             backgroundColor: '#626572', 
             ease:Expo.easeInOut
         }, '-=0.9')
-        // .to(topbar, 0.4, { alpha: 0, ease: Power4.easeOut });
+        // .to(intro, 0.4, { alpha: 0, ease: Power4.easeOut });
         
         
-        // debugging stuff
-        // let paused;
+        // // debugging stuff
+        // // let paused;
         
-        // this.play = () => {
-        //     paused = false;            
-        //     tl.play();
-        // };
+        // // this.play = () => {
+        // //     paused = false;            
+        // //     tl.play();
+        // // };
         
-        // this.pause = () => {
-        //     if (paused) {
-        //         this.play();
-        //         return;
-        //     } else {
-        //         tl.pause();
-        //     }
-        //     paused = true;            
-        // };
+        // // this.pause = () => {
+        // //     if (paused) {
+        // //         this.play();
+        // //         return;
+        // //     } else {
+        // //         tl.pause();
+        // //     }
+        // //     paused = true;            
+        // // };
         
-        // this.reverse = () => {
-        //     tl.reverse();
-        // };
+        // // this.reverse = () => {
+        // //     tl.reverse();
+        // // };
         
-        // this.resume = () => {
-        //     tl.resume();
-        // };
+        // // this.resume = () => {
+        // //     tl.resume();
+        // // };
         
-        // this.restart = () => {
-        //     tl.restart();
-        // };        
+        // // this.restart = () => {
+        // //     tl.restart();
+        // // };        
     }
     
-    let leave = (element) => {
+    leave (element) {
         
     }
     
-    let animationComplete = () => {
-        $timeout(() => {
-            console.log('finsihed');
-            AppValues.app.introAnimationComplete = true;
-        });
+    animationComplete () {
+        this.$state.go('home');  
     }
     
-    return {
-        enter,
-        leave
-    }
-};
+}
 
-topbarAnimation.$inject = ['$timeout', 'AppValues'];
-
-export default topbarAnimation;
+export default IntroService;

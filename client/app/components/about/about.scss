@@ -1,8 +1,16 @@
 @import '../../common/sass/common';
 
 about {
-    position: relative;
-    top: 5em;
+    // position: relative;
+    // top: 5em;
+    
+    header {
+        height: $headerHeight + px;    
+    }
+    
+    main {
+        flex: 1;
+    }
     
     .large-heading {
         font-family: 'Roboto Slab', serif;        

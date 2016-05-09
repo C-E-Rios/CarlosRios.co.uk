@@ -1,12 +1,9 @@
 class AppController {
     
-    constructor(AppValues) {
+    constructor () {
         'ngInject';
         
-        this.AppValues = AppValues;
-        this.name = 'app';
-        this.menu = false;
-              
+        this.name = 'app';              
     }
         
     
