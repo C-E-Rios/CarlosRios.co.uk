@@ -14,13 +14,15 @@ class MenuController {
     }
     
     changeRoute (location) {
-        this.menuService.leave(this.$element, location)
-            .then(() => {
-                this.menuService.menu = false;
-                if (location) {
-                    this.$state.go(location);                
-                }
-            });
+        // this.menuService.leave(this.$element, location)
+        //     .then(() => {
+        //         this.menuService.menu = false;
+        //         if (location) {
+        //             this.$state.go(location);                
+        //         }
+        //     });
+        this.menuService.toggleMenu();
+        this.$state.go(location);          
     }
 
 }

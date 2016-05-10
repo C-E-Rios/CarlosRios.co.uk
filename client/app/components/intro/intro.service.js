@@ -7,8 +7,7 @@ class IntroService {
     
     enter (element) {
         let intro   = element,
-        introBg     = angular.element(element[0].querySelectorAll('.intro')),    
-        introXy =  intro[0].getBoundingClientRect(),
+        introBg     = angular.element(element[0].querySelectorAll('.intro')),
         thinLetter  = angular.element(element[0].querySelectorAll('#thin path')),
         thickLetter = angular.element(element[0].querySelectorAll('#thick path')),
         badge       = angular.element(element[0].querySelector('#badge')),                                                                                              
@@ -18,21 +17,41 @@ class IntroService {
             onComplete: (() => { this.animationComplete() })
         });
         
-
-        
         tl
-        
         //defaults 
-        // .set(logo, { 
-        //     z: 0.01, 
-        //     force3D: 'true'
-            // xPercent: '-50%',
-            // yPercent: '-50%',           
-        // })
-        .set(introBg[0], { 
+        .timeScale(1.3)      
+        .set(introBg, { 
             z: 0.01, 
-            force3D: "true"
+            force3D: 'true',
+            boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
+            backfaceVisibility: 'hidden'
         })
+        .set(thinLetter, { 
+            z: 0.01, 
+            force3D: 'true',
+            boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
+            backfaceVisibility: 'hidden'
+        }) 
+        .set(thickLetter, { 
+            z: 0.01, 
+            force3D: 'true',
+            boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
+            backfaceVisibility: 'hidden'
+        })
+        .set(badge, { 
+            z: 0.01, 
+            force3D: 'true',
+            boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
+            backfaceVisibility: 'hidden'
+        }) 
+        .set(logo, { 
+            z: 0.01, 
+            force3D: 'true',
+            xPercent: '-50%',
+            yPercent: '-50%',
+            boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
+            backfaceVisibility: 'hidden'
+        })                          
         .set(thickLetter, {
             opacity: 0
         })
@@ -116,14 +135,14 @@ class IntroService {
         // make logo smaller and move to top
         .to(logo, 0.3, { 
             css: {
-                marginTop: '2.6em', 
+                marginTop: '2.75em', 
                 width: '81px', 
                 top: 0               
             },
         })        
         
         // remove badge stroke
-        .to('#badge', 0.2, { 
+        .to(badge, 0.2, { 
             stroke: 'none' 
         }, "-=0.8")
         
@@ -137,41 +156,7 @@ class IntroService {
             ease:Expo.easeInOut
         }, '-=0.9')
         // .to(intro, 0.4, { alpha: 0, ease: Power4.easeOut });
-        
-        
-        // // debugging stuff
-        // // let paused;
-        
-        // // this.play = () => {
-        // //     paused = false;            
-        // //     tl.play();
-        // // };
-        
-        // // this.pause = () => {
-        // //     if (paused) {
-        // //         this.play();
-        // //         return;
-        // //     } else {
-        // //         tl.pause();
-        // //     }
-        // //     paused = true;            
-        // // };
-        
-        // // this.reverse = () => {
-        // //     tl.reverse();
-        // // };
-        
-        // // this.resume = () => {
-        // //     tl.resume();
-        // // };
-        
-        // // this.restart = () => {
-        // //     tl.restart();
-        // // };        
-    }
-    
-    leave (element) {
-        
+      
     }
     
     animationComplete () {

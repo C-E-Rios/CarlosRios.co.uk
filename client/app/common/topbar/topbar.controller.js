@@ -1,9 +1,10 @@
 class TopbarController {
 
-    constructor($state, $element, menuService) {
+    constructor($document, $state, $element, menuService) {
         'ngInject';
         
         this.$state = $state;
+        this.$document = $document;
         
         this.name = 'topbar';
         this.menuService = menuService;
@@ -11,7 +12,7 @@ class TopbarController {
     }
     
     toggleMenu () {
-        this.menuService.menu = !this.menuService.menu;        
+        this.menuService.toggleMenu();       
     }
     
     atHome () {       

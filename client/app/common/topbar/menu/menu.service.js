@@ -1,7 +1,8 @@
 class MenuService {
-    constructor ($q) {
+    constructor ($q, $document) {
         'ngInject';
         this.$q = $q;
+        this.$document = $document;
         this.menu = false;
     }
     
@@ -9,25 +10,38 @@ class MenuService {
         let menu    = element,
             nav     = menu.find('nav'),
             footer  = menu.find('footer');
-            // thinLetter  = angular.element(element[0].querySelectorAll('#thin path'));
                     
         let tl = new TimelineLite({ 
             onComplete: (() => {  })
         });
         
-        tl.fromTo(menu, 0.5, {
+        tl
+        .set(nav, {
+            z: 0.01, 
+            force3D: 'true',
+            boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
+            backfaceVisibility: 'hidden'            
+        })
+        .set(footer, {
+            z: 0.01, 
+            force3D: 'true',
+            boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
+            backfaceVisibility: 'hidden'            
+        })        
+        .from(nav, 0.3, {
             css: {
                 opacity: 0,
-                y: -100
-            }
-        }, {
-            css: {
-                opacity: 1,
-                y: 0,
+                y: -100,
                 clearProps: 'all'
             },
-            easing: Expo.easeInOut
-        });
+            easing: SlowMo.easeIn            
+        })
+        .from(footer, 0.3, {
+            css: {
+                opacity: 0,
+                clearProps: 'all'
+            }
+        }, '-=0.3');
     }
     
     leave (element) {
@@ -36,13 +50,19 @@ class MenuService {
         let menuItem  = element,
             nav     = menuItem.find('nav'),
             footer  = menuItem.find('footer');
-            // thinLetter  = angular.element(element[0].querySelectorAll('#thin path'));
                     
         let tl = new TimelineLite({ 
             onComplete: (() => { this.animationComplete(defer) })
         });
         
-        tl.fromTo(nav, 0.5, {
+        tl
+        .set(nav, {
+            z: 0.01, 
+            force3D: 'true',
+            boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
+            backfaceVisibility: 'hidden'            
+        })     
+        .fromTo(nav, 0.5, {
             css: {
                 opacity: 1,
                 y: 0
@@ -60,6 +80,18 @@ class MenuService {
     
     animationComplete (defer) {
         defer.resolve();
+    }
+    
+    toggleMenu () {
+        this.menu = !this.menu;
+        
+        // prevent scrolling when menu is open
+        let bodyRef = angular.element( this.$document[0].body );        
+        if (this.menu) {
+            bodyRef.addClass('ovh');
+        } else {
+            bodyRef.removeClass('ovh');
+        }         
     }
     
 }

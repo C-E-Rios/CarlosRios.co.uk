@@ -88,7 +88,14 @@ class PortfolioService {
             animationDirection = this.getAnimationDirection(hoverDirection), 
             overlay = angular.element(element[0].querySelectorAll('.item-description')); 
         
-        tl.fromTo(overlay, 0.5, {
+        tl
+        .set(overlay, {
+            z: 0.01, 
+            force3D: 'true',
+            boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
+            backfaceVisibility: 'hidden'             
+        })
+        .fromTo(overlay, 0.5, {
             css: {
                 left: animationDirection.from.left,
                 top: animationDirection.from.top                 
@@ -114,7 +121,14 @@ class PortfolioService {
             animationDirection = this.getAnimationDirection(hoverDirection), 
             overlay = angular.element(element[0].querySelectorAll('.item-description')); 
         
-        tl.fromTo(overlay, 0.5, {
+        tl
+        .set(overlay, {
+            z: 0.01, 
+            force3D: 'true',
+            boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
+            backfaceVisibility: 'hidden'             
+        })
+        .fromTo(overlay, 0.5, {
             css: {
                 left: animationDirection.to.left,
                 top: animationDirection.to.top

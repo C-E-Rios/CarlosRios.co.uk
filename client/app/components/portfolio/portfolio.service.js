@@ -11,11 +11,22 @@ class PortfolioService {
         let sections = element.find('portfolio-item');
         
         tl
-        .staggerFrom(sections, 0.3, {
+        .set(sections, {
+            z: 0.01, 
+            force3D: 'true',
+            boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
+            backfaceVisibility: 'hidden'            
+        })
+        .staggerFromTo(sections, 0.3, {
             css: {
                 x: 80,
-                opacity: 0,
-                clearProps: 'all'
+                autoAlpha: 0
+            }
+        },{
+            css: {
+                x: 0,
+                autoAlpha: 1,
+                clearProps: 'transform, backfaceVisibility, boxShadow'
             }
         }, 0.1);
          

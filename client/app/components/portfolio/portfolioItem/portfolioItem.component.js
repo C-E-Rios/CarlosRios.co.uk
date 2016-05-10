@@ -4,7 +4,7 @@ import './portfolioItem.scss';
 
 let portfolioItemComponent = {
     bindings: {
-        title: '<',
+        itemTitle: '<',
         description: '<',
         bgImgSrc: '<',
         state: '<'
