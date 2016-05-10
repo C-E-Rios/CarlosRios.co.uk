@@ -1,7 +1,14 @@
 class AboutController {
-  constructor() {
-    this.name = 'about';
-  }
+    constructor ($element, aboutService) {
+        'ngInject';
+        this.$element = $element;
+        this.aboutService = aboutService;
+        this.name = 'about';
+    }
+    
+    $onInit () {
+        this.aboutService.enter(this.$element);
+    }
 }
 
 export default AboutController;

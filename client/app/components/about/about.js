@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import aboutComponent from './about.component';
+import aboutService from './about.service';
 import { ExternalLogger } from '../../../../vendor/LogDecorator';
 
 let aboutModule = angular.module('about', [
@@ -15,7 +16,8 @@ let aboutModule = angular.module('about', [
             template: '<about></about>'
         });
 })
-.component('about', aboutComponent);
+.component('about', aboutComponent)
+.service('aboutService', aboutService);
 
 let $log = new ExternalLogger();
     $log = $log.getInstance( 'BOOTSTRAP' );

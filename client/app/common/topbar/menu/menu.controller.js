@@ -14,7 +14,7 @@ class MenuController {
     }
     
     changeRoute (location) {
-        this.menuService.leave(this.$element)
+        this.menuService.leave(this.$element, location)
             .then(() => {
                 this.menuService.menu = false;
                 if (location) {

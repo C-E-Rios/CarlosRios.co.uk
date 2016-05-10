@@ -5,6 +5,7 @@
 @import 'mixins';
 @import 'maps';
 @import 'typography';
+@import 'hover';
 
 
 body {
@@ -15,7 +16,12 @@ body {
 .content {
     margin: 0 auto;
     padding: 0 2em;
-    max-width: 800px;
+    width: 80%;
+    max-width: 1000px;
     margin-bottom: 50px;
     line-height: 1.6em;
+    
+    @include respond-to('phone') {
+        width: 100%;
+    }
 }

@@ -1,7 +1,6 @@
 class MenuService {
-    constructor ($state, $q) {
+    constructor ($q) {
         'ngInject';
-        this.$state = $state;
         this.$q = $q;
         this.menu = false;
     }
@@ -56,7 +55,7 @@ class MenuService {
             easing: Expo.easeInOut
         })    
         
-        return defer.promise   
+        return defer.promise;  
     }
     
     animationComplete (defer) {
