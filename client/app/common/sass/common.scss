@@ -6,26 +6,5 @@
 @import 'maps';
 @import 'typography';
 @import 'hover';
+@import 'utils';
 
-
-body {
-    height: 100%;
-    background-color: #202126;
-}
-
-.ovh {
-    overflow: hidden;
-}
-
-.content {
-    margin: 0 auto;
-    padding: 0 2em;
-    width: 80%;
-    max-width: 1000px;
-    margin-bottom: 50px;
-    line-height: 1.6em;
-    
-    @include respond-to('phone') {
-        width: 100%;
-    }
-}

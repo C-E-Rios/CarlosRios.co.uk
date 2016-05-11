@@ -3,11 +3,9 @@ import controller from './about.controller';
 import './about.scss';
 
 let aboutComponent = {
-  restrict: 'E',
-  bindings: {},
-  template,
-  controller,
-  controllerAs: 'vm'
+    bindings: {},
+    template,
+    controller
 };
 
 export default aboutComponent;

@@ -12,7 +12,9 @@ about {
         flex: 1;
     }
     
-    .large-heading {
+    span.large-heading {
+        display: block;
+        padding: 0.5em 0 0.3em;
         font-family: 'Roboto Slab', serif;        
         @include mapTypeList((2, 2, 2, 2, 3, 3));
     }

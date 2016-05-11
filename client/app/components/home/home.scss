@@ -3,6 +3,8 @@
 home {
     
     @include full-height();
+    //header height
+    height: calc(100vh - 90px);
     
     header {
         height: $headerHeight + px;
@@ -10,6 +12,7 @@ home {
     
     main {
         flex: 1;
+        padding-top: 0;
     }
     
     h1 {

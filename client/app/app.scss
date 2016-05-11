@@ -3,3 +3,25 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    height: 100%;
+    background-color: #202126;
+}
+
+main {
+    padding-top: 4em;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 0 2em;
+    width: 80%;
+    max-width: 1000px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+    
+    @include respond-to('phone') {
+        width: 100%;
+    }
+}
