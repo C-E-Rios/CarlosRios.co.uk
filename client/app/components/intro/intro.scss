@@ -1,6 +1,5 @@
 @import '../../common/sass/common';
 
-
 .intro {
     background-color: #ffffff;
     height: 100%;   
@@ -9,8 +8,10 @@
     position: absolute;     
     top: 0;
     width: 100%;
+    z-index: 24;
 
     svg.logo {
+        display: none;
         width: 25%;
         @include respond-to('small') {
             width: 20%;
@@ -23,12 +24,6 @@
         position: absolute;
         top: 47%;
         left: 50%;         
-    }
-    
-    svg.logo {
-        #thin path {
-            opacity: 0;
-        }
-    }    
+    }   
     
 }

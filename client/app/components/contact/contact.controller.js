@@ -7,7 +7,7 @@ class ContactController {
     }
     
     $onInit () {
-        // this.contactService.enter(this.$element);
+        this.contactService.enter(this.$element);
     }
 }
 

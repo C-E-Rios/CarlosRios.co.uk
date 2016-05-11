@@ -1,12 +1,6 @@
 @import '../../common/sass/common';
 
 about {
-    // position: relative;
-    // top: 5em;
-    
-    header {
-        height: $headerHeight + px;    
-    }
     
     main {
         flex: 1;
@@ -29,19 +23,26 @@ about {
         line-height: 1.2;
     }
     
-    .skills--heading {
+    .skills-development--heading, .skills-design--heading {
         border-bottom: 1px solid #ffffff;
         margin: 0 3em 0.6em 0;
-        padding-bottom: 0.4em        
+        padding-bottom: 0.4em;         
     }
     
-    ul.skills--development, ul.skills--design {
+    .skills-design--heading {
+        margin-top: 1em;
+        @include respond-to('small') {
+            margin-top: 0;
+        }        
+    }
+    
+    ul.skills-development--list, ul.skills-design--list {
         margin: 0;
         padding: 0;
         padding-left: 1.2em;
     }
     
-    ul.skills--development li {
+    ul.skills-development--list li {
         float: left;
         width: 50%;
     }

@@ -2,6 +2,164 @@
 
 contact {
     
+    main {
+        margin: 0 0 30px;        
+        @include respond-to('small') {
+            margin: 0 0 100px;
+        }
+                
+    }
+    
+    h1 {
+        font-family: 'Roboto Slab', serif;        
+        @include mapTypeList((2, 2, 2, 2, 3, 3));      
+    }
+
+    form.pure-form {
+        
+        @include respond-to('large') {
+            // width: 80%;
+        }
+        
+        fieldset {
+            input, input[type=text], input[type=email], textarea:last-child {
+                margin-top: 1em;
+                
+                background-color: #202126;
+                box-shadow: none;
+                border-color: #363740;
+                
+                height: 4em;
+                font-size: 0.8rem;
+                padding-left: 1.4em;
+                
+                &::placeholder {
+                  color: #fff;
+                }                                    
+            }
+            
+            input[type=text] {
+                margin-top: 0;
+            }
+            
+            textarea:last-child {
+                height: 8em;
+                resize: none;
+            }
+        }
+        
+        button.pure-button-primary {
+            background-color: #363740;
+            padding: 1em;
+            @include respond-to('medium') {
+                width: 50%;
+            }
+        }        
+    }
+    
+    .social-container {
+        // border-bottom: 2em solid #363740;   
+        // background-color: #535461;
+        text-align: center;
+        padding: 2em;
+        margin-top: 1em;        
+
+        ul {
+            padding-left: 0;
+        }
+    }
+    
+    .social-icons {
+        
+        ul {
+            
+            list-style-type: none;
+            
+            li {
+                display: inline;
+                padding-left: 1em;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+            
+            svg {
+                width: 3em;
+                height: 3em;
+                
+                fill: #fff;
+            }            
+        }
+    }
+    
+    .social-email-phone {
+        ul {
+            list-style-type: none;
+            margin: 0;
+            font-size: 0.9rem;
+            
+            li {
+                display: block;
+                @include respond-to('medium'){
+                    display: inline;
+                }
+                
+                &:first-child {
+                    &:after {
+                        display: none;  
+                        @include respond-to('medium') {
+                            display: inline;
+                        }                   
+                        content: '|';
+                        color: #fff;
+                        padding: 0 0.5em 0 0.8em;
+                    }
+                }
+            }
+        }
+    }
+    
+    footer {
+        position: relative;
+        height: 60px;        
+        @include respond-to('small') {
+            position: absolute;
+            height: 60px;        
+        }        
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        overflow: hidden;      
+        
+        .footer-container {
+            border-top: 2px solid #535461;
+            padding-top: 1em;
+            
+            .company-number, .registered-in {
+                text-align: center;
+                padding: 0;
+                color: #535461;
+                
+                @include respond-to('small') {
+                    width: 50%;
+                }
+            }
+            
+            @include respond-to('small') {
+                .company-number {
+                    float: left;
+                    text-align: right;
+                    padding-right: 1em
+                }
+                
+                .registered-in {
+                    text-align: left;
+                    float: right;
+                    padding-left: 1em;
+                }  
+            }
+           
+        }
+    }
+    
 }
-
-

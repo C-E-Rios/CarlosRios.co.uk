@@ -1,8 +1,9 @@
 class IntroService {
-    constructor ($state, $timeout) {
+    constructor ($state, $timeout, $window) {
         'ngInject'
         this.$state = $state;
         this.$timeout = $timeout;
+        this.$window = $window;
     }
     
     enter (element) {
@@ -16,6 +17,9 @@ class IntroService {
         let tl = new TimelineLite({ 
             onComplete: (() => { this.animationComplete() })
         });
+        
+        
+        let winW = this.$window.outerWidth;
         
         tl
         //defaults 
@@ -32,7 +36,8 @@ class IntroService {
             boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
             backfaceVisibility: 'hidden'
         }) 
-        .set(thickLetter, { 
+        .set(thickLetter, {
+            opacity: 0, 
             z: 0.01, 
             force3D: 'true',
             boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
@@ -44,20 +49,15 @@ class IntroService {
             boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
             backfaceVisibility: 'hidden'
         }) 
-        .set(logo, { 
+        .set(logo, {
+            display: 'block', 
             z: 0.01, 
             force3D: 'true',
             xPercent: '-50%',
             yPercent: '-50%',
             boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
             backfaceVisibility: 'hidden'
-        })                          
-        .set(thickLetter, {
-            opacity: 0
         })
-        .set(thinLetter, {
-            opacity: 1
-        }) 
                
         // draw single stroke cgr
         .staggerFromTo(thinLetter, 0.9, { 
@@ -136,7 +136,7 @@ class IntroService {
         .to(logo, 0.3, { 
             css: {
                 marginTop: '2.75em', 
-                width: '81px', 
+                width: winW > 991 ? '81px' : '61px', 
                 top: 0               
             },
         })        

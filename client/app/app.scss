@@ -10,18 +10,25 @@ body {
 }
 
 main {
-    padding-top: 4em;
+    padding-top: 3em;
+    @include respond-to('xlarge') {
+        padding-top: 6em;
+    }
 }
 
 .content {
     margin: 0 auto;
     padding: 0 2em;
-    width: 80%;
+    width: 90%;
     max-width: 1000px;
     margin-bottom: 50px;
     line-height: 1.6em;
     
     @include respond-to('phone') {
         width: 100%;
+    }
+    
+    @include respond-to('large') {
+        width: 80%;
     }
 }

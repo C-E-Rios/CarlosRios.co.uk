@@ -13,18 +13,25 @@ menu {
 
 .menu-wrap {
     @include full-height();
+    padding: 0;
 }
 
 nav {
     flex: 1;
-    padding: 1em 3em;
+    padding: 1em;
     
     ul {
         list-style-type: none;
+        padding: 0 1em;
+        
+        li {
+            padding-bottom: 0.6em;
+            height: 20%;            
+        }
     }
     
     a {
-        @include mapTypeList((3, 1, 2, 2, 3, 3));
+        @include mapTypeList((3, 2, 2, 2, 3, 3));
     }
 }
 
