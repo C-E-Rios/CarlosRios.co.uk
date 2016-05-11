@@ -12,15 +12,13 @@ class IntroService {
         thinLetter  = angular.element(element[0].querySelectorAll('#thin path')),
         thickLetter = angular.element(element[0].querySelectorAll('#thick path')),
         badge       = angular.element(element[0].querySelector('#badge')),                                                                                              
-        logo         = element.find('svg');
+        logo         = element.find('svg'),
+        logoSize = this.$window.outerWidth > 991 ? '81px' : '61px';
                     
         let tl = new TimelineLite({ 
             onComplete: (() => { this.animationComplete() })
         });
-        
-        
-        let winW = this.$window.outerWidth;
-        
+                
         tl
         //defaults 
         .timeScale(1.3)      
@@ -136,7 +134,7 @@ class IntroService {
         .to(logo, 0.3, { 
             css: {
                 marginTop: '2.75em', 
-                width: winW > 991 ? '81px' : '61px', 
+                width: logoSize, 
                 top: 0               
             },
         })        

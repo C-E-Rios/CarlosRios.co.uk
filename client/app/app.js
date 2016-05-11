@@ -3,11 +3,12 @@ import uiRouter from 'angular-ui-router';
 
 import { LogDecorator, ExternalLogger } from '../../vendor/LogDecorator';
 
-import TweenLite from "gsap";
-import TimelineLite from "gsap";
+import TweenLite from "gsap/src/uncompressed/TweenLite";
+import TimelineLite from "gsap/src/uncompressed/TimelineLite";
 import CSSPlugin from "gsap/src/uncompressed/plugins/CSSPlugin"
 import DrawSVGPlugin from "gsap/src/uncompressed/plugins/DrawSVGPlugin";
 import MorphSVGPlugin from "gsap/src/uncompressed/plugins/MorphSVGPlugin";
+import EasePack from "gsap/src/uncompressed/easing/EasePack";
 
 import Common from './common/common';
 import Components from './components/components';
