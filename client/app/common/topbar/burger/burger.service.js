@@ -4,7 +4,7 @@ class BurgerService {
     
     enter (element) {
                     
-        let tl = new TimelineLite();
+        let tl = new TimelineLite({ delay: 0.3 });
         let burger = element[0];
         
         tl

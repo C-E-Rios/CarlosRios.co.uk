@@ -152,7 +152,7 @@ class IntroService {
             ease: Power4.easeOut 
         }, '-=0.4')
         .to(introBg, 0.3, { 
-            backgroundColor: '#626572', 
+            backgroundColor: '#363740', 
             ease:Expo.easeInOut
         }, '-=0.9')
         // .to(intro, 0.4, { alpha: 0, ease: Power4.easeOut });

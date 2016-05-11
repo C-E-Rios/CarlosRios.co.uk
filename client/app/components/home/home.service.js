@@ -69,7 +69,7 @@ class HomeService {
                 opacity: 1,
                 clearProps: 'all'
             }            
-        }); 
+        }, '-=0.3'); 
     }
     
     leave (element, location) {
