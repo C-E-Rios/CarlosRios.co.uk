@@ -1,5 +1,9 @@
 @import url(//fonts.googleapis.com/css?family=Work+Sans:100|Roboto+Slab:700);
-@import '../../vendor/pure';
+// @import './node_modules/purecss/build/pure';
+@import './node_modules/purecss/build/buttons';		
+@import './node_modules/purecss/build/forms';		
+@import './node_modules/purecss/build/grids';
+@import './node_modules/purecss/build/grids-responsive';	
 @import 'common/sass/common';
 
 * {

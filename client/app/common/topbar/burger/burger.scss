@@ -7,6 +7,7 @@ burger {
 }
 
 .burger {
+    transform: translate3d(0,0,0);    
     cursor: pointer;
     height: 26px;
     transform: rotate(0deg);
