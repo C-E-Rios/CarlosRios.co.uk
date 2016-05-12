@@ -2,6 +2,7 @@
 
 import gulp     from 'gulp';
 import webpack  from 'webpack';
+
 import path     from 'path';
 import sync     from 'run-sequence';
 import rename   from 'gulp-rename';
@@ -11,10 +12,12 @@ import yargs    from 'yargs';
 import lodash   from 'lodash';
 import gutil    from 'gulp-util';
 import serve    from 'browser-sync';
+import webpackStream  from 'webpack-stream';
 import webpackDevMiddelware from 'webpack-dev-middleware';
 import webpachHotMiddelware from 'webpack-hot-middleware';
 import colorsSupported      from 'supports-color';
 import historyApiFallback   from 'connect-history-api-fallback';
+import CompressionPlugin from 'compression-webpack-plugin';
 
 let root = 'client';
 
@@ -57,6 +60,46 @@ gulp.task('webpack', (cb) => {
     }));
 
     cb();
+  });
+});
+
+// Production build
+gulp.task("build", ["webpack:build"]);
+
+gulp.task("webpack:build", function(callback) {
+  // modify some webpack config options
+  var myConfig = Object.create(require('./webpack.dist.config'));
+  myConfig.entry.app = paths.entry;
+  if (!myConfig.plugins){ 
+    myConfig.plugins = [];
+  }
+  myConfig.plugins = myConfig.plugins.concat(
+    new webpack.DefinePlugin({
+      "process.env": {
+        // This has effect on lib size
+        "NODE_ENV": JSON.stringify("production")
+      }
+    }),
+		new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.optimize.UglifyJsPlugin,
+
+		new CompressionPlugin({
+			// asset: "{file}",
+			algorithm: "gzip",
+			regExp: /\.js$|\.html$/,
+			threshold: 10240,
+			minRatio: 0.8
+		})     
+  );
+
+  // run webpack
+  webpack(myConfig, function(err, stats) {
+    if(err) throw new gutil.PluginError("webpack:build", err);
+    gutil.log("[webpack:build]", stats.toString({
+      colors: true
+    }));
+    callback();
   });
 });
 

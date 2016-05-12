@@ -16,8 +16,12 @@
     "babel-loader": "^5.0.0",
     "browser-sync": "^2.11.1",
     "chai": "^3.4.0",
+    "clean-webpack-plugin": "^0.1.9",
+    "compression-webpack-plugin": "^0.3.1",
     "connect-history-api-fallback": "^1.1.0",
     "css-loader": "^0.19.0",
+    "eslint": "^2.9.0",
+    "eslint-loader": "^1.3.0",
     "fs-walk": "0.0.1",
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
@@ -49,10 +53,13 @@
     "webpack": "^1.9.5",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0",
+    "webpack-stream": "^3.2.0",
     "yargs": "^3.9.0"
   },
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "stats": "webpack --progress -c --profile --json > stats.json",
+    "deploy": "webpack -p --deploy --config webpack.cgr.config.js"
   },
   "keywords": [
     "frontend",

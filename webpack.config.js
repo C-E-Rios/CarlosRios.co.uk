@@ -5,7 +5,7 @@ var precss       = require('precss');
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
-  devtool: 'sourcemap',
+  devtool: 'cheap-module-source-map',
   entry: {},
   externals: {
     'TweenLite': 'TweenLite'
@@ -15,7 +15,7 @@ module.exports = {
        { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
        { test: /\.html$/, loader: 'raw' },
        { test: /\.scss$/, loader: 'style!css?sourceMap!postcss!sass?sourceMap' },
-       { test: /\.css$/, loader: 'style!css!postcss' }
+       { test: /\.css$/, loader: 'style!css' }
     ]
   },
   postcss: function () {
