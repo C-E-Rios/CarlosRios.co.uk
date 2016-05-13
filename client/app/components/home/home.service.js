@@ -12,7 +12,7 @@ class HomeService {
         });
         
         let h1 = element.find('h1');
-        let h3 = element.find('h3');        
+        let h2 = element.find('h2');        
         let appSections = element.find('li');
         
         tl
@@ -22,7 +22,7 @@ class HomeService {
             boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
             backfaceVisibility: 'hidden'
         })
-        .set(h3, {
+        .set(h2, {
             z: 0.01, 
             force3D: 'true',
             boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
@@ -47,7 +47,7 @@ class HomeService {
             }         
         })
         
-        tl.fromTo(h3, 0.5, {
+        tl.fromTo(h2, 0.5, {
             css: {
                 x: 80
             }
@@ -77,7 +77,7 @@ class HomeService {
         let defer = this.$q.defer();
         
         let h1 = element.find('h1');
-        let h3 = element.find('h3');
+        let h2 = element.find('h2');
         let appSections = element.find('li');
         
         let tl = new TimelineLite({
@@ -91,7 +91,7 @@ class HomeService {
             boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
             backfaceVisibility: 'hidden'
         })
-        .set(h3, {
+        .set(h2, {
             z: 0.01, 
             force3D: 'true',
             boxShadow: '0 0 1px rgba(0, 0, 0, 0);',
@@ -109,7 +109,7 @@ class HomeService {
                 opacity: 0
             }
         })
-        .to(h3, 0.3, {
+        .to(h2, 0.3, {
             css: {
                 x: 100,
                 opacity: 0

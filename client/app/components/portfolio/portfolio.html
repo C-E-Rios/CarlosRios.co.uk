@@ -1,14 +1,12 @@
-<main>
-    <section class="content">
-        <h1>Work examples</h1>
-        <div ng-repeat="(row, items) in $ctrl.portfolioItems track by $index" class="pure-g">
-            <portfolio-item ng-repeat="item in items" 
-                            class="pure-u-1 pure-u-md-{{item.width}}" 
-                            item-title="item.title" 
-                            description="item.description"
-                            bg-img-src="item.img.src" 
-                            state="item.state">
-            </portfolio-item>
-        </div>       
-    </section>
-</main>
+<section>
+    <h1>Work examples</h1>
+    <div ng-repeat="(row, items) in $ctrl.portfolioItems track by $index" class="pure-g">
+        <portfolio-item ng-repeat="item in items" 
+                        class="pure-u-1 pure-u-md-{{item.width}}" 
+                        item-title="item.title" 
+                        description="item.description"
+                        bg-img-src="item.img.src" 
+                        state="item.state">
+        </portfolio-item>
+    </div>       
+</section>

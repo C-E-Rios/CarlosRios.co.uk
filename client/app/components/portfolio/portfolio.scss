@@ -2,40 +2,43 @@
 
 portfolio {
     
-    header {
-        height: $headerHeight + px;    
-    }
-    
-    section.content {
-        padding-bottom: 3em;
+    section {
+        width: 100%;   
+        margin: 0 auto;
+        padding: 3rem 10%;      
+        
         @include respond-to('small') {
-            :last-child {
-                padding-bottom: 1em;
-            }            
+            padding: 3rem 5%;
+            width: 90%;
+            max-width: 1000px;
         }
         
-        h1 {
-            @include mapTypeList((2, 2, 2, 2, 3, 3));
-            padding-bottom: 0.3em;            
-        }
+        @include respond-to('large') {
+            width: 90%;
+        }         
     }
     
+    h1 {
+        margin: 0 0 1.5rem;
+        font-family: 'Roboto Slab', serif;        
+    }    
+    
     .pure-g {
-        @include respond-to('small') {
+        @include respond-to('medium') {
             :nth-child(n+1) {
-                padding: 0 0 0 1em;
+                padding: 0 0 0 1rem;
             }
             :first-child {
                 padding: 0;
             }
-            padding: 1em 0 0;            
+            padding: 1rem 0 0;            
         }
     }
     
     portfolio-item {
         visibility: hidden;
-        margin-top: 2em;
-        @include respond-to('small') {
+        margin-top: 2rem;
+        @include respond-to('medium') {
             margin-top: 0;
         }
     }

@@ -1,10 +1,9 @@
 $media-breakpoints: (
-    'phone': (max-width: 568px),
-    'small': (min-width: 768px),
-    'small-portrait': (min-width: 768px, orientation: portrait),
-    'medium': (min-width: 992px),
-    'large': (min-width: 1200px),
-    'xlarge': (min-width: 1600px)    
+    'phone': (max-width: 35.5em),
+    'small': (min-width: 35.5em),
+    'medium': (min-width: 48em),
+    'large': (min-width: 64em),
+    'xlarge': (min-width: 80em)    
 );
 
 $media-types: (

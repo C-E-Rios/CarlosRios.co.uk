@@ -12,8 +12,11 @@ class IntroService {
         thinLetter  = angular.element(element[0].querySelectorAll('#thin path')),
         thickLetter = angular.element(element[0].querySelectorAll('#thick path')),
         badge       = angular.element(element[0].querySelector('#badge')),                                                                                              
-        logo         = element.find('svg'),
-        logoSize = this.$window.outerWidth > 991 ? '81px' : '61px';
+        logo        = element.find('svg'),
+        logoSize = {
+            top: this.$window.outerWidth > 768 ? '2' : '2',
+            width: this.$window.outerWidth > 768 ? '81px' : '61px'
+        } 
                     
         let tl = new TimelineLite({ 
             onComplete: (() => { this.animationComplete() })
@@ -133,9 +136,8 @@ class IntroService {
         // make logo smaller and move to top
         .to(logo, 0.3, { 
             css: {
-                marginTop: '2.75em', 
-                width: logoSize, 
-                top: 0               
+                y: logoSize.top, 
+                width: logoSize.width             
             },
         })        
         

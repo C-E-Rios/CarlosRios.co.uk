@@ -7,6 +7,7 @@
     "angular": "^1.5.0",
     "angular-ui-router": "^0.2.15",
     "gsap": "^1.18.4",
+    "normalize.css": "^4.1.1",
     "purecss": "^0.6.0"
   },
   "devDependencies": {

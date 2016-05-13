@@ -1,42 +1,38 @@
 $ms-base: 1rem;
-$ms-ratio: $golden;
+$ms-ratio: $golden, 1.25;
 
-///($default, $phone, $tablet-portrait, $tablet-landscape, $desktop, $large-desktop)
+html {
+    font-size: 90%;
+    color: #fff;
 
-h1 { @include mapTypeList((2, 1, 1, 1, 2, 3)); }
-
-h2 { @include mapTypeList((2, 1, 1, 1, 2, 2)); }
-
-h3 { @include mapTypeList((2, 0, 1, 1, 1, 2)); }
-
-h4 { @include mapTypeList((1, 0, 1, 1, 1, 1)); }
-
-p { @include mapTypeList((0, 0, 0, 0, 0, 0)); }
+    @include respond-to('small') {
+        font-size: 100%;
+    }
+    
+    @include respond-to('medium') {
+        font-size: 110%;
+    }
+}
 
 body {
-    color: #ffffff;
-    background: #202126;
-    -webkit-font-smoothing: subpixel-antialiased;
+    font-size: ms(0);
+    font-family: 'Cabin', sans-serif;
+}
+
+h4 {
+    font-size: ms(3);
+}
+h3 {
+    font-size: ms(4);
+}
+h2 {
+    font-size: ms(6);
+}
+h1 {
+    font-size: ms(7);
 }
 
 a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
-}
-
-h1, h2, li {
-    font-family: 'Roboto Slab', serif;
-}
-
-h3, h4 {
-    font-family: 'Work Sans', sans-serif;
-    line-height: 1.2;
-}
-
-p {
-    // font-family: 'Prata', sans-serif;
-    line-height: 1.7;
-    @include respond-to('phone') {
-        font-size: 0.9rem;
-    }
 }

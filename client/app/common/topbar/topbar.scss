@@ -1,60 +1,23 @@
 @import '../sass/common';
 
-header + * {
-    margin-top: $headerHeight + px;
-}
-
-// .topbar {           
-//     height: $headerHeight + px;  
-//     display: flex;
-//     align-items: center;    
-    
-// }
-
-// .topbar {
-//     background: #626572;
-//     .logo {
-            
-//         height: 60px;
-//         @include respond-to('medium') {
-//             height: 80px;
-//         } 
-        
-//         margin: 0 auto;
-        
-//         img {
-//             min-width: 60px;
-//             @include respond-to('medium') {
-//                 min-width: 80px;
-//             }         
-//         }  
-//     }     
-// }
-
-
 .topbar {
-    // background-color: #626572;
     background-color: #363740;    
     height: $headerHeight + px;    
     left: 0;   
     margin: 0;    
-    position: absolute;     
     top: 0;
+    text-align: center;
     width: 100%;
     z-index: 12;    
 
     svg#logo {
-        // width: 15%;
+        position: relative;
+        top: 14px;
         width: 60px;
         @include respond-to('medium') {
+            top: 4px;
             width: 80px;
-        }         
-        
-        max-width: 540px;
-        position: absolute;
-        top: 49%;
-        left: 50%;
-        transform: translate(-50%, -50%);  
+        }
     }   
     
 }

@@ -5,10 +5,10 @@ class ContactService {
     enter (element) {
                     
         let tl = new TimelineLite();
-        let sayHello = element.find('section')[0];
+        let sayHello = element.find('article')[0];
         let form = element.find('form');        
         let socialContainer = angular.element(element[0].querySelectorAll('.social-container'));
-        let footer = element.find('footer');
+
         let performanceHacks = {
             z: 0.01, 
             force3D: 'true',
@@ -19,8 +19,7 @@ class ContactService {
         tl
         .set(sayHello, performanceHacks)
         .set(form, performanceHacks)
-        .set(socialContainer, performanceHacks)
-        .set(footer, performanceHacks)              
+        .set(socialContainer, performanceHacks)           
                      
         .from(sayHello, 0.3, {
             css: {
@@ -31,24 +30,18 @@ class ContactService {
         })
         .from(form, 0.3, {
             css: {
-                x: -80,
+                x: 80,
                 opacity: 0,
                 clearProps: 'all'
             }
         })
         .from(socialContainer, 0.3, {
             css: {
-                x: 80,
+                x: -80,
                 opacity: 0,
                 clearProps: 'all'
             }
-        }, '-=0.3')
-        .from(footer, 0.3, {
-            css: {
-                opacity: 0,
-                clearProps: 'all'
-            }
-        }, '-=0.3');                
+        }, '-=0.3');              
          
     }
     

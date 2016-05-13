@@ -1,37 +1,63 @@
 @import '../../common/sass/common';
 
+@include respond-to('small') {
+    
+    contact {            
+        @include display-table();
+
+        section {
+            @include display-table-cell();
+        }  
+    }    
+}
+
 contact {
     
-    main {
-        margin: 0 0 30px;        
+    .container {
+        width: 100%;   
+        margin: 0 auto;
+        padding: 3rem 10% 3rem;      
+        
         @include respond-to('small') {
-            margin: 0 0 100px;
+            width: 90%;
+            padding: 3rem 5%;
+            max-width: 1000px;
         }
-                
+        
+        @include respond-to('large') {
+            width: 90%;
+        }         
     }
     
     h1 {
-        font-family: 'Roboto Slab', serif;        
-        @include mapTypeList((2, 2, 2, 2, 3, 3));      
+        margin: 0 0 1rem;
+        font-size: ms(7);
+        font-family: 'Roboto Slab', serif;  
+    }
+    
+    h3 {
+        margin: 0 0 1.5rem; 
+        font-family: 'Work Sans', sans-serif;               
+        font-size: ms(1);
+        line-height: 1.6;
+        @include respond-to('small'){
+            line-height: 1.3;
+        }
     }
 
     form.pure-form {
         
-        @include respond-to('large') {
-            // width: 80%;
-        }
-        
         fieldset {
             input, input[type=text], input[type=email], textarea:last-child {
-                margin-top: 1em;
+                margin-top: 1rem;
                 
                 background-color: #202126;
                 box-shadow: none;
                 border-color: #363740;
                 
-                height: 4em;
+                height: 4rem;
                 font-size: 0.8rem;
-                padding-left: 1.4em;
+                padding-left: 1.4rem;
                 
                 &::placeholder {
                   color: #fff;
@@ -45,12 +71,17 @@ contact {
             textarea:last-child {
                 height: 8em;
                 resize: none;
+                
+                &::placeholder {
+                    padding-top: 0.5rem;                    
+                }
             }
         }
         
         button.pure-button-primary {
             background-color: #363740;
-            padding: 1em;
+            margin: 0.5rem 0;
+            padding: 1rem;
             @include respond-to('medium') {
                 width: 50%;
             }
@@ -58,18 +89,24 @@ contact {
     }
     
     .social-container {
-        // border-bottom: 2em solid #363740;   
-        // background-color: #535461;
         text-align: center;
-        padding: 2em;
-        margin-top: 1em;        
+        padding: 3rem 0 0;        
+        
+        @include respond-to('medium') {
+            padding: 3rem 2rem 0;        
+        }
 
         ul {
             padding-left: 0;
+            font-family: 'Cabin', sans-serif;
         }
     }
     
     .social-icons {
+        
+        @include respond-to('medium') {
+            margin-top: 2rem;
+        }
         
         ul {
             
@@ -77,15 +114,19 @@ contact {
             
             li {
                 display: inline;
-                padding-left: 1em;
+                padding-left: 1rem;
                 &:first-child {
                     padding-left: 0;
                 }
             }
             
             svg {
-                width: 3em;
-                height: 3em;
+                width: 4rem;
+                height: 4rem;
+                @include respond-to('medium') {
+                    width: 3rem;
+                    height: 3rem;   
+                }
                 
                 fill: #fff;
             }            
@@ -95,19 +136,23 @@ contact {
     .social-email-phone {
         ul {
             list-style-type: none;
-            margin: 0;
+            margin: 2rem 0 0;
             font-size: 0.9rem;
+            
+            @include respond-to('medium'){
+                margin: 1rem 0;            
+            }
             
             li {
                 display: block;
-                @include respond-to('medium'){
+                @include respond-to('large'){
                     display: inline;
                 }
                 
                 &:first-child {
                     &:after {
                         display: none;  
-                        @include respond-to('medium') {
+                        @include respond-to('large') {
                             display: inline;
                         }                   
                         content: '|';
@@ -115,50 +160,11 @@ contact {
                         padding: 0 0.5em 0 0.8em;
                     }
                 }
-            }
-        }
-    }
-    
-    footer {
-        position: relative;
-        height: 60px;        
-        @include respond-to('small') {
-            position: absolute;
-            height: 60px;        
-        }        
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        overflow: hidden;      
-        
-        .footer-container {
-            border-top: 2px solid #535461;
-            padding-top: 1em;
-            
-            .company-number, .registered-in {
-                text-align: center;
-                padding: 0;
-                color: #535461;
-                
-                @include respond-to('small') {
-                    width: 50%;
+                &:last-child {
+                    font-size: 0.7rem;
+                    margin: 0.5rem 0;
                 }
             }
-            
-            @include respond-to('small') {
-                .company-number {
-                    float: left;
-                    text-align: right;
-                    padding-right: 1em
-                }
-                
-                .registered-in {
-                    text-align: left;
-                    float: right;
-                    padding-left: 1em;
-                }  
-            }
-           
         }
     }
     

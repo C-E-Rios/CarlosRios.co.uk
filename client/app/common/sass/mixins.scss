@@ -1,3 +1,14 @@
+@mixin display-table(){
+    height: 100%;
+    width: 100%;
+    display: table;    
+}
+
+@mixin display-table-cell(){
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
 
 @mixin vertical-align($position: relative) {
   position: $position;
@@ -12,11 +23,17 @@
 }
 
 ///
-@mixin full-height() {
+@mixin full-height-flex() {
     height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: row; 
+}
+
+@mixin full-height() {
+    position: absolute;
+    height: 100%; width: 100%;
+    top: 0; bottom: 0;
 }
 
 /// Media query merger

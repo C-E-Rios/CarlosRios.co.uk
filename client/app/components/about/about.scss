@@ -2,35 +2,57 @@
 
 about {
     
-    main {
-        flex: 1;
+    section {
+        width: 100%;   
+        margin: 0 auto;
+        padding: 3rem 10%;      
+        
+        @include respond-to('small') {
+            padding: 3rem 5%;
+            width: 90%;
+            max-width: 1000px;
+        }
+        
+        @include respond-to('large') {
+            width: 90%;
+        }         
     }
     
-    span.large-heading {
+    span.large-greeting {
         display: block;
-        padding: 0.5em 0 0.3em;
-        font-family: 'Roboto Slab', serif;        
-        @include mapTypeList((2, 2, 2, 2, 3, 3));
+        margin: 0 0 1rem;
+        font-size: ms(7);
+        font-family: 'Roboto Slab', serif;
     }
-    
-    .small-heading {
-        $ms-base: 18px;
-        @include mapTypeList((1, 1, 1, 1, 1, 1));
-        @include respond-to('medium') {
-            font-size: 2rem;
-        }        
-        font-family: 'Work Sans', sans-serif;
+
+    h1 {
+        margin: 0 0 1.5rem; 
+        font-family: 'Work Sans', sans-serif;               
+        font-size: ms(4);
         line-height: 1.2;
+    }  
+    
+    h2 {
+        margin: 1.5rem 0 1rem;         
+        font-size: ms(4);
+        line-height: 1.2;
+        font-family: 'Roboto Slab', serif;
     }
     
-    .skills-development--heading, .skills-design--heading {
+    h3 {
+        margin: 0 3rem 0.6rem 0;
+        font-family: 'Work Sans', sans-serif;
+        font-size: ms(2);
         border-bottom: 1px solid #ffffff;
-        margin: 0 3em 0.6em 0;
-        padding-bottom: 0.4em;         
-    }
+        padding-bottom: 0.4rem;         
+    }    
     
+    p {
+        line-height: 1.6;    
+    }
+        
     .skills-design--heading {
-        margin-top: 1em;
+        margin-top: 1rem;
         @include respond-to('small') {
             margin-top: 0;
         }        
@@ -40,6 +62,11 @@ about {
         margin: 0;
         padding: 0;
         padding-left: 1.2em;
+        
+        li {
+            font-family: 'Cabin', 'sans-serif';
+            line-height: 1.5;
+        }
     }
     
     ul.skills-development--list li {
