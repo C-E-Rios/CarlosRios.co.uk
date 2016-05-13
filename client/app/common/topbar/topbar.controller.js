@@ -11,8 +11,8 @@ class TopbarController {
                 
     }
     
-    toggleMenu () {
-        this.menuService.toggleMenu();       
+    toggleMenu (event) {
+        this.menuService.toggleMenu(event);       
     }
     
     atHome () {       

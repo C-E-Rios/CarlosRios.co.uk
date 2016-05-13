@@ -1,7 +1,8 @@
 class MenuService {
-    constructor ($q, $document) {
+    constructor ($q, $window, $document) {
         'ngInject';
         this.$q = $q;
+        this.$window = $window;
         this.$document = $document;
         this.menu = false;
     }
@@ -82,15 +83,23 @@ class MenuService {
         defer.resolve();
     }
     
-    toggleMenu () {
+    toggleMenu (event) {
+        // if scroll, scroll up
+        if (this.$window.pageYOffset > 0) {
+            this.$window.scrollTo(0, 0);        
+        }
+        
+        // toggle menu
         this.menu = !this.menu;
         
         // prevent scrolling when menu is open
-        let bodyRef = angular.element( this.$document[0].body );        
+        let body = angular.element( this.$document[0].body );        
         if (this.menu) {
-            bodyRef.addClass('ovh');
+            body.addClass('ovh');
+            body.bind('touchmove', (event) => { event.preventDefault() });
         } else {
-            bodyRef.removeClass('ovh');
+            body.removeClass('ovh');
+            body.unbind('touchmove');
         }         
     }
     
