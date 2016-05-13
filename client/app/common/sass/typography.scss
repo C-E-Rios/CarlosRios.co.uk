@@ -1,6 +1,20 @@
 $ms-base: 1rem;
 $ms-ratio: $golden, 1.25;
 
+@mixin thick-font(){
+    font-family: 'Roboto Slab', serif;
+}
+
+@mixin thin-font(){
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: -0.09rem;
+    word-spacing: -0.12rem;
+}
+
+@mixin main-font(){
+    font-family: 'Cabin', sans-serif;
+}
+
 html {
     font-size: 90%;
     color: #fff;
@@ -16,7 +30,7 @@ html {
 
 body {
     font-size: ms(0);
-    font-family: 'Cabin', sans-serif;
+    @include main-font();
 }
 
 h4 {
@@ -36,3 +50,4 @@ a {
     color: #fff;
     text-decoration: none;
 }
+
