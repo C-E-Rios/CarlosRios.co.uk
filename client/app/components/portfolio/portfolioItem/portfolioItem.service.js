@@ -104,7 +104,7 @@ class PortfolioService {
             css: {
                 left: animationDirection.to.left,
                 top: animationDirection.to.top,
-                // clearProps: 'transform'
+                clearProps: 'transform, opacity, backfaceVisibility, boxShadow, top'
             }
         });     
             

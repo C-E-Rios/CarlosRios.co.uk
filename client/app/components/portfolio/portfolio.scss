@@ -19,8 +19,13 @@ portfolio {
     }
     
     h1 {
-        margin: 0 0 1.5rem;
-        font-family: 'Roboto Slab', serif;        
+        margin: 0;
+        @include respond-to('medium') {
+            margin: 0 0 1.5rem;        
+        }
+        font-size: ms(6);
+        line-height: 1.2;        
+        font-family: 'Roboto Slab', serif;
     }    
     
     .pure-g {

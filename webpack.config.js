@@ -14,21 +14,13 @@ module.exports = {
   module: {
     loaders: [
        { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
+      //  { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }, // inline base64 URLs for <=8k images, direct URLs for the rest
+       { test: /\.(jpe?g|png|gif)$/i, loader:'file' },              
        { test: /\.html$/, loader: 'raw' },
       //  { test: /\.scss$/, loader: 'style!css!postcss!sass' },
       //  { test: /\.css$/, loader: 'style!css' },
-       
-            {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style", "css")
-            },
-            // Optionally extract less files
-            // or any other compile-to-css language
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style", "css!sass")
-            }       
-       
+       {  test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css') },
+       {  test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!postcss!sass') }
     ]
   },
   postcss: function () {
