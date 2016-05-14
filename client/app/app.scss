@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Quicksand:300|Roboto+Slab:700|Cabin);
+// @import url(//fonts.googleapis.com/css?family=Quicksand:300|Roboto+Slab:700|Cabin);
 @import './node_modules/normalize.css/normalize';
 @import './node_modules/purecss/build/buttons';		
 @import './node_modules/purecss/build/forms';		
@@ -24,26 +24,49 @@ div[ui-view] {
     height: calc(100vh - 90px);
 }
 
-main {
-    // padding-top: 2rem;
-    // padding-bottom: 3rem;
+
+// typography
+
+html {
+    font-size: 90%;
+    color: #fff;
+
+    @include respond-to('small') {
+        font-size: 100%;
+    }
+    
+    @include respond-to('medium') {
+        font-size: 110%;
+    }
 }
 
-.content {
-    
-    width: 100%;   
-    margin: 0 auto;
-    padding: 1rem 10%;
-    
-    @include respond-to('small') {
+body {
+    font-size: ms(0);
+    @include main-font();
+}
 
-        padding: 3rem 10%;    
-        width: 90%;
-        max-width: 1000px;
+h4 {
+    font-size: ms(3);
+}
+h3 {
+    font-size: ms(4);
+}
+h2 {
+    font-size: ms(6);
+}
+h1 {
+    font-size: ms(7);
+}
 
-    }
-    
-    @include respond-to('large') {
-        width: 80%;
-    }
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+// utils
+
+.ovh {
+    overflow: hidden;
 }
