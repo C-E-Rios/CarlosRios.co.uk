@@ -36,12 +36,12 @@ class PortfolioService {
         return [
             {
                 1: {
-                    title: 'Chwz.it',
-                    description: 'This is a rails based project I embarked on to gain a fullstack perspective on the development process. Users can post content and edit their profiles.',
+                    title: 'tillr.io',
+                    description: 'tillr is a flexible, easy to use cloud-based audit and inspection tool, saving operational managers valuable time and increasing their productivity',
                     img: {
-                        src: 'assets/images/chwzit.png'
+                        src: 'assets/images/tillr.png'
                     },
-                    state: 'chwzit',
+                    state: 'tillr',
                     width: '3-5'
                 },
                 2: {
@@ -57,24 +57,23 @@ class PortfolioService {
             },
             {
                 1: {
-
-                    title: 'Detodo',
-                    description: 'DETODO was designed for a client wishing to self-manage his favourite video content on the internet.',
+                    title: 'Chwz.it',
+                    description: 'This is a node based project I embarked on to gain a fullstack perspective on the development process. Users can post content and edit their profiles.',
                     img: {
-                        src: 'assets/images/detodo.png'
+                        src: 'assets/images/chwzit2.png'
                     },
-                    state: 'detodo',
+                    state: 'chwzit',
                     width: '2-5'
-                },
+                },                
                 2: {
-                    title: 'Infosecurity Mag',
-                    description: 'An example of a client-wide compatible HTML email. All e-mails are designed to look beautiful in all major clients.',
+                    title: 'Blackthorn',
+                    description: 'An application built to allow complex communications between two government agencies. It provides a great user experience admist a very complex workfow.',
                     img: {
-                        src: 'assets/images/infosecurity.png'
+                        src: 'assets/images/blackthorn.png'
                     },
-                    state: 'infosecurity',
+                    state: 'blackthorn',
                     width: '3-5'                        
-                }
+                },
             },
             {
                 1: {
@@ -87,13 +86,14 @@ class PortfolioService {
                     width: '1-3'                        
                 },
                 2: {
-                    title: 'Chwz.it',
-                    description: 'This is a rails based project I embarked on to gain a fullstack perspective on the development process. Users can post content and edit their profiles.',
+
+                    title: 'Detodo',
+                    description: 'DETODO was designed for a client wishing to self-manage his favourite video content on the internet.',
                     img: {
-                        src: 'assets/images/chwzit.png'
+                        src: 'assets/images/detodo.png'
                     },
-                    state: 'chwzit',
-                    width: '1-3'                        
+                    state: 'detodo',
+                    width: '1-3'
                 },
                 3: {
                     
