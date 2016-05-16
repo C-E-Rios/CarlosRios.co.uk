@@ -1,6 +1,9 @@
 class ContactService {
     
-    constructor () {}
+    constructor ($http) {
+        'ngInject';
+        this.$http = $http;
+    }
     
     enter (element) {
                     
@@ -43,6 +46,23 @@ class ContactService {
             }
         }, '-=0.3');              
          
+    }
+    
+    sendMail (contact) {
+        let postIt = 'https://api.pepipost.com/api/web.send.json',
+            postmarkData = {
+                'fromname': 'Mr. Bot',
+                'subject': 'Mr. Bot - Query from ' + contact.name + ', ' + contact.email,
+                'from': 'bot@carlosrios.co.uk',
+                'content': contact.message            
+            },  
+            data = {
+                'api_key': '887d86ee66edde90a022aa2b2a9d9402',
+                'email_details': postmarkData,
+                'recipients': ['hello@carlosrios.co.uk']
+            };
+        
+        return this.$http.post(postIt, data);                
     }
     
 }

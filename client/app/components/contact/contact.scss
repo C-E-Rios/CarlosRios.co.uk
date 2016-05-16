@@ -48,10 +48,14 @@ contact {
     form.pure-form {
         
         fieldset {
-            input, input[type=text], input[type=email], textarea:last-child {
+            input, 
+            input[type=text], 
+            input[type=email], 
+            textarea:last-child {
                 margin-top: 1rem;
                 
                 background-color: #202126;
+                color: #fff;                
                 box-shadow: none;
                 border-color: #363740;
                 
@@ -61,7 +65,27 @@ contact {
                 
                 &::placeholder {
                   color: #fff;
+                }
+                
+                &:focus:invalid {
+                    border-color: #363740;                
+                    color: #fff;  
+                }
+                
+                &.ng-dirty.ng-invalid {
+                    border-color: #e9322d;
+                }
+                
+                @include respond-to('phone') {
+                    font-size: 1.11111rem;
                 }                                    
+            }           
+            
+            input.ng-dirty.ng-invalid,
+            intput[type=text].ng-dirty.ng-invalid,
+            input[type=email].ng-dirty.ng-invalid,
+            textarea:last-child.ng-dirty.ng-invalid {
+                border-color: #e9322d;                
             }
             
             input[type=text] {
@@ -80,13 +104,133 @@ contact {
         
         button.pure-button-primary {
             background-color: #363740;
-            margin: 0.5rem 0;
+            margin: 0.5rem 0 0;
             padding: 1rem;
             @include respond-to('medium') {
                 width: 50%;
             }
-        }        
+        }
     }
+    
+    .form-container {
+        
+        position: relative;
+        
+        form.sending {
+            fieldset {
+                animation: cgr-fade-out-form 0.5s; 
+                opacity: 0.1;          
+            }
+            
+            button {
+                animation: cgr-fade-out-button 0.5s;
+                opacity: 0.4;                
+            }
+            
+            @keyframes cgr-fade-out-form {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0.1;
+                }
+            }  
+            @keyframes cgr-fade-out-button {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0.4;
+                }
+            }                        
+        }
+        
+        form.sent {
+            fieldset, button {
+                opacity: 0;
+            }
+        }
+        
+        .form-overlay {
+            
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;            
+         
+            .loading {
+                opacity: 0;
+                width: 5rem;
+                height: 5rem;
+                margin: 100px auto;
+                background-color: #363740;
+
+                border-radius: 100%;  
+                animation: cgr-loading 1.0s infinite ease-in-out;
+                animation-delay: 0.3s;
+                
+                @keyframes cgr-loading {
+                    0% { 
+                        opacity: 1;
+                        transform: scale(0);
+                    } 100% {
+                        transform: scale(1.0);
+                        opacity: 0;
+                    }
+                }            
+                
+            }
+            
+            .message-sent {
+                position: relative;
+                padding: 6rem 2rem 0;
+                animation: cgr-fade-in 1.0s ease-in;
+
+                h4 {
+                    font-family: 'Cabin', sans-serif;
+                    font-size: ms(0);
+                    margin: 1rem auto;                    
+                    width: 65%;
+                }
+                
+                .close-button {
+                    
+                    position: absolute;
+                    top: 2rem;
+                    right: 0;                    
+                    
+                    span {
+                        cursor: pointer;
+                        background: #363740;
+                        border-radius: 9px;
+                        display: block;
+                        height: 0.4rem;
+                        width: 2rem;
+                        right: 0;
+                        position: absolute;                        
+                    }
+                    span:nth-child(1) {
+                        transform: rotate(45deg);
+                    }
+
+                    span:nth-child(2) {
+                        transform: rotate(-45deg);
+                    }
+                    
+                }    
+                
+                @keyframes cgr-fade-in {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+            }         
+            
+        }
+    }        
     
     .social-container {
         text-align: center;
@@ -166,6 +310,6 @@ contact {
                 }
             }
         }
-    }
+    }    
     
 }
