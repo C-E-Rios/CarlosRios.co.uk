@@ -8,7 +8,7 @@ $ms-ratio: $golden, 1.25;
 @mixin thin-font(){
     font-family: 'Quicksand', sans-serif;
     letter-spacing: -0.09rem;
-    word-spacing: -0.12rem;
+    // word-spacing: -0.12rem;
 }
 
 @mixin main-font(){

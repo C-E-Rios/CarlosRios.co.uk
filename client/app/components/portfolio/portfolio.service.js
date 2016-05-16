@@ -67,7 +67,7 @@ class PortfolioService {
                 },                
                 2: {
                     title: 'Blackthorn',
-                    description: 'An application built to allow complex communications between two government agencies. It provides a great user experience admist a very complex workfow.',
+                    description: 'An application built to allow complex communications between two government agencies. It provides a great user experience amidst a very complex workflow.',
                     img: {
                         src: 'assets/images/blackthorn.png'
                     },
