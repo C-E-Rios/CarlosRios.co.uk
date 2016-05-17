@@ -1,5 +1,6 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import angulartics from 'angulartics-google-analytics';
 
 import { LogDecorator, ExternalLogger } from '../../vendor/LogDecorator';
 
@@ -28,6 +29,8 @@ angular
         let body = document.getElementsByTagName('body')[0];
         let app  = angular.module( appName, [ 
                     uiRouter,
+                    angulartics,
+                    angulartics.google.analytics,
                     Common.name,
                     Components.name 
                 ])
